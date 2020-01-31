@@ -9,9 +9,9 @@ puts "==========================="
 puts "Creating Categories"
 puts "==========================="
 
-cate1 = Category.new(name: "Bijoux")
-cate2 = Category.new(name: "Poignée")
-cate3 = Category.new(name: "Décoration")
+cate1 = Category.new(name: "Bijoux", image: "https://p2.piqsels.com/preview/114/817/305/glass-copper-sterling-silver-earrings-stone.jpg")
+cate2 = Category.new(name: "Poignée", image: "https://www.publicdomainpictures.net/pictures/300000/nahled/door-handle-in-brass.jpg")
+cate3 = Category.new(name: "Décoration", image: "lampe.jpg")
 
 cate1.save!
 cate2.save!

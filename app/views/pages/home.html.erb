@@ -1,1 +1,12 @@
-<h1>HOME PAGE</h1>
+<h1 class="title">HOME PAGE</h1>
+
+<div>
+  <% @categories.each do |category| %>
+    <ul>
+      <li>
+        <%= category.name %>
+        <img src="<%= image_path(category.image) %>" alt="" class="img-cat">
+      </li>
+    </ul>
+  <% end %>
+</div>
