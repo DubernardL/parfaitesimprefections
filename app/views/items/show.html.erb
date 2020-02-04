@@ -1,0 +1,35 @@
+<div class="container">
+
+  <a href="javascript:history.go(-1)"><i class="fas fa-arrow-left"></i></i></a>
+
+  <div class="item row">
+    <!-- Gallery -->
+    <div id="js-gallery" class="gallery col-md-6">
+
+      <!--Gallery Hero-->
+      <div class="gallery__hero">
+        <img src="<%= @item.image %>">
+      </div>
+
+      <!--Gallery Thumbs-->
+      <div class="gallery__thumbs">
+          <a href="<%= @item.image %>" data-gallery="thumb" class="is-active">
+            <img src="<%= @item.image %>">
+          </a>
+          <a href="<%= @item.photo2 %>" data-gallery="thumb">
+            <img src="<%= @item.photo2 %>">
+          </a>
+          <a href="<%= @item.photo3 %>" data-gallery="thumb">
+            <img src="<%= @item.photo3 %>">
+          </a>
+      </div><!--Gallery Thumbs-->
+    </div><!--gallery /// Product Detail Gallery Component /// codepen -->
+
+    <div class="info-item col-md-6">
+      <h2><%= @item.name %></h2>
+      <p><%= @item.description %></p>
+      <p><%= @item.price %> €</p>
+    </div>
+  </div>
+
+ </div><!--.container-->

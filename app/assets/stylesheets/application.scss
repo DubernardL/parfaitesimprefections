@@ -1,6 +1,8 @@
 @import "bootstrap/scss/bootstrap";
-@import "home";
 
+// pages
+@import "pages/home";
+@import "pages/items";
 
 // partials
 @import "components/nav_bar";
@@ -9,3 +11,4 @@
 @import "components/footer";
 @import "components/btn";
 @import "components/card_trip";
+@import "components/gallery_product";
