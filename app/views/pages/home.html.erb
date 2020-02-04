@@ -8,6 +8,32 @@
 </div>
 
 <div class="container">
+
+  <div class="description row">
+    <div class="content-description emaille col">
+      <div class="img-emaille">
+        <img src="https://www.hautehorlogerie.org/typo3temp/_processed_/csm_000G-9854_Enamel_465955_02_629cd1bde9.jpg" class="img-emaille-content" alt="">
+      </div>
+      <h2>L'émaille sur métaux</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eum qui rem. Expedita est dolorem praesentium nulla quibusdam, cum inventore. Quaerat aspernatur dolorem ea doloribus voluptate enim ullam, tempore explicabo.</p>
+      <div class="center-btn">
+        <a href="#"><button type="button" class="btn-description">Voir les pièces</button></a>
+      </div>
+    </div>
+
+    <div class="content-description atelier col">
+      <div class="img-atelier">
+ <!--        <img src="https://www.ecole-metiers-art.fr/sites/default/files/cap.jpg" alt=""> -->
+        <img src="https://www.ecole-metiers-art.fr/sites/default/files/image_cap_formation.jpg" alt="">
+      </div>
+      <h2>L'Atelier</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eum qui rem. Expedita est dolorem praesentium nulla quibusdam, cum inventore. Quaerat aspernatur dolorem ea doloribus voluptate enim ullam, tempore explicabo.</p>
+      <div class="center-btn">
+        <a href="#"><button type="button" class="btn-description">Découvrir l'atelier</button></a>
+      </div>
+    </div>
+  </div>
+
   <div class="cards">
     <% @categories.each do |category| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(category.image) %>)">

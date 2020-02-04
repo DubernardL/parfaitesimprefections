@@ -1,6 +1,30 @@
-.img-cat {
-  width: 100px;
-  height: 100px;
+// description
+.description {
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
+.content-description {
+  margin-top: 30px;
+}
 
+.img-emaille-content {
+  width: 500px;
+}
+
+.img-emaille {
+  text-align: center;
+}
+
+.img-atelier {
+  text-align: center;
+}
+
+.center-btn {
+  text-align: center;
+}
+
+.content-description h2 {
+  text-align: center;
+  margin-top: 10px;
+}
