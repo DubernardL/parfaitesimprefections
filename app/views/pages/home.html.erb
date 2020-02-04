@@ -36,9 +36,11 @@
 
   <div class="cards">
     <% @categories.each do |category| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(category.image) %>)">
-        <%= category.name %>
-      </div>
+      <%=link_to category_path(category), class:"link-to" do%>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(category.image) %>)">
+          <%= category.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

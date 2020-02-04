@@ -35,21 +35,21 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Catégories
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Bijoux</a>
-              <a class="dropdown-item" href="#">Décoration</a>
-              <a class="dropdown-item" href="#">Poignées</a>
+              <% @categories.each do |category| %>
+                <a class="dropdown-item" href="<%= category_path(category) %>"><%= category.name %></a>
+              <% end %>
             </div>
           </li>
         </ul>
       </div>
-      <a class="navbar-brand" href="#">Parfaites Imperfections</a>
+      <a class="navbar-brand" href="<%= root_path %>">Parfaites Imperfections</a>
       <div class="collapse navbar-collapse" id="navbarNavDropdown" id="right-title">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -78,9 +78,9 @@
           <div class="col-xs-6 col-md-3">
             <h6>Catégories</h6>
             <ul class="footer-links">
-              <li><a href="#">Bijoux</a></li>
-              <li><a href="#">Décoration</a></li>
-              <li><a href="#">Poignée</a></li>
+              <% @categories.each do |category| %>
+                  <li><a href="<%= category_path(category) %>"><%= category.name %></a></li>
+              <% end %>
             </ul>
           </div>
 

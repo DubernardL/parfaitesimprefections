@@ -5,7 +5,7 @@
 }
 
 .content-description {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .img-emaille-content {
@@ -27,4 +27,28 @@
 .content-description h2 {
   text-align: center;
   margin-top: 10px;
+}
+
+// Category
+
+.cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 18px;
+}
+
+// links
+
+.link-to {
+  text-decoration: none !important;
+}
+
+.link-too {
+  text-decoration: none !important;
+}
+
+.link-to:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transform: scale(1.03);
 }
