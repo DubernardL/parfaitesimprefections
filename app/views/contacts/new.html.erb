@@ -1,0 +1,13 @@
+<div class="container">
+
+  <%= simple_form_for @contact do |f| %>
+    <%= f.input :name, label: 'Nom', placeholder: 'Jeannine' %>
+
+    <%= f.input :email, label: 'email', placeholder: 'Jeannine@gmail.com' %>
+
+    <%= f.input :message, as: :text, label: 'message', placeholder: "Bonjour, j'aimerais ..." %>
+
+    <%= f.submit "Envoyer", class: "btn-description" %>
+  <% end %>
+
+</div>

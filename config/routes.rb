@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
   resources :items, only: [:index, :show]
+  resources :contacts, only: [:new, :create]
 
 end
