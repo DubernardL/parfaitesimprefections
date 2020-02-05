@@ -1,19 +1,20 @@
-class Contact < MailForm::Base
-  attribute :name
-  validates :name, presence: true
+class Contact
+  attr_accessor :name, :email, :message
+  include ActiveModel::Validations
+  include ActiveModel::Conversion
+  extend  ActiveModel::Naming
 
-  attribute :email
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+  validates :name, :email, :message, presence: true
+  validates :email, :format => { :with => %r{.+@.+\..+} }, allow_blank: true
 
-  attribute :message
-  validates :message, presence: true
 
-  def headers
-    {
-      :subject => "Contact Form",
-      :to => "parfaites-imperfections@outlook.com",
-      :from => %("<#{name}>" <#{email}>)
-    }
+  def persisted?
+    false
+  end
+
+  def initialize(attributes = {})
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
   end
 end

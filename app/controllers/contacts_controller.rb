@@ -7,11 +7,11 @@ class ContactsController < ApplicationController
   def create
     @categories = Category.all
     @contact = Contact.new(params[:contact])
-    @contact.request = request
-    if @contact.deliver
-      flash.now[:error] = nil
+
+    if @contact.valid?
+      Mailer.contact_form(@contact).deliver
+      redirect_to new_contact_path, flash: {success: t(:"create.message_has_been_sent")}
     else
-      flash.now[:error] = "Impossible d'envoyer le message..."
       render :new
     end
   end
