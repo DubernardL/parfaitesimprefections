@@ -1,13 +1,34 @@
 <div class="container">
+  <h2>Contact</h2>
 
-  <%= simple_form_for @contact do |f| %>
-    <%= f.input :name, label: 'Nom', placeholder: 'Jeannine' %>
+  <p>Bonjour, pour toutes demandes, renseignements ou autres je suis disposée à échanger avec vous !</p>
 
-    <%= f.input :email, label: 'email', placeholder: 'Jeannine@gmail.com' %>
 
-    <%= f.input :message, as: :text, label: 'message', placeholder: "Bonjour, j'aimerais ..." %>
+  <form action="https://formspree.io/xdogzpyz"
+    method="POST">
+    <div class="form-group">
+      <label class="form-label">
+        Nom
+        <input type="text" name="_replyto" class="form-control" placeholder="Jeannine">
+      </label>
+    </div>
 
-    <%= f.submit "Envoyer", class: "btn-description" %>
-  <% end %>
+    <div class="form-group">
+      <label class="form-label">
+        Email
+        <input type="text" name="_replyto" class="form-control" placeholder="Jeannine@outlook.fr">
+      </label>
+    </div>
 
+    <div class="form-group">
+      <label class="form-label">
+        Message
+        <textarea name="message" class="form-control" rows="6" placeholder="Bonjour, Blablabla ..."></textarea>
+      </label>
+    </div>
+
+    <div class="center-btn">
+      <button type="submit" class="btn-description">Envoyer</button>
+    </div>
+  </form>
 </div>
