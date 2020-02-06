@@ -28,7 +28,7 @@
     <div class="info-item col-md-6">
       <h2><%= @item.name %></h2>
       <p><%= @item.description %></p>
-      <p><%= @item.price %> €</p>
+      <p><%= humanized_money_with_symbol(@item.price) %></p>
     </div>
   </div>
 
