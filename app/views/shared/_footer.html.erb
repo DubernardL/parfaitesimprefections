@@ -1,0 +1,45 @@
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>A propos</h6>
+        <p class="text-justify">Site réalisé par <a href="http://lucasdubernard.com/">Lucas Dubernard</a>.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Catégories</h6>
+        <ul class="footer-links">
+          <% @categories.each do |category| %>
+              <li><a href="<%= category_path(category) %>"><%= category.name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Liens directs</h6>
+        <ul class="footer-links">
+          <li><a href="#">L'atelier</a></li>
+          <li><a href="<%= new_contact_path %>">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
