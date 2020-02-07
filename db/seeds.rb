@@ -44,7 +44,7 @@ puts "==========================="
 puts "Creating Items"
 puts "==========================="
 
-user1 = User.new(email:"lucas@gmail.com", password:"azerty", adress:"26 rue sanche de pomiers", city:"Bordeaux", cp:"3300", first_name:"Lucas", last_name:"Dubernard")
+user1 = User.new(email:"lucas@gmail.com", password:"azerty", adresse:"26 rue sanche de pomiers", ville:"Bordeaux", code_postal:"3300", prenom:"Lucas", nom:"Dubernard")
 
 user1.save!
 

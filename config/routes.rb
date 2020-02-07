@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :items, only: [:index, :show]
   resources :contacts, only: [:new, :create]
+  resources :carts, only: [:index]
+  resources :cart_items, only: [:create]
 
 end

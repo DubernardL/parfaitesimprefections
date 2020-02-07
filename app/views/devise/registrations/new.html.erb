@@ -1,0 +1,47 @@
+<% @categories = Category.all %>
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <h2>S'enregistrer</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :prenom,
+                  required: true,
+                  input_html: { autocomplete: "prenom" } %>
+      <%= f.input :nom,
+                  required: true,
+                  input_html: { autocomplete: "nom" } %>
+      <%= f.input :adresse,
+                  required: true,
+                  input_html: { autocomplete: "adresse" } %>
+      <%= f.input :ville,
+                  required: true,
+                  input_html: { autocomplete: "ville" } %>
+      <%= f.input :code_postal,
+                  required: true,
+                  input_html: { autocomplete: "code_postal" } %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-actions mb-3">
+      <span class="btn-description"><%= f.button :submit, "S'enregistrer" %></span>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
+
+<%= render 'shared/footer' %>

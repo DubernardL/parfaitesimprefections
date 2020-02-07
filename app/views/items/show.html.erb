@@ -30,6 +30,9 @@
       <h2><%= @item.name %></h2>
       <p><%= @item.description %></p>
       <p><%= humanized_money_with_symbol(@item.price) %></p>
+      <div class="center-btn">
+        <%= button_to "Ajouter au panier", cart_items_path, class: "btn-description" %>
+      </div>
     </div>
   </div>
 
