@@ -6,6 +6,10 @@ module CurrentCart
     # session[:cart_id] ||= @cart.id
     if current_user
       @cart = current_user.cart
+      if @cart == nil
+        @cart = Cart.create
+        current_user.cart = @cart
+      end
     end
   end
 end
