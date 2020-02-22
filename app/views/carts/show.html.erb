@@ -1,1 +1,23 @@
-<h1>CART</h1>
+<%= render 'shared/navbar' %>
+<div class="container">
+  <a href="javascript:history.go(-1)"><i class="fas fa-arrow-left"></i></i></a>
+
+
+  <ul class="list-group">
+    <% @cart.cart_items.each do |itemcart| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= link_to item_path(itemcart.item.id), class:"link-to" do %>
+          <img src="<%= itemcart.item.image %>" class="img-cart"> <%= itemcart.item.name %>
+        <% end %>
+        <span><%= itemcart.item.price %> €</span>
+        <span class="badge badge-primary badge-pill">
+          x <%= itemcart.quantity %>
+        </span>
+        <%= button_to cart_item_path(itemcart.id), method: :delete do %>
+          <i class='fas fa-trash-alt'></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%= render 'shared/footer' %>

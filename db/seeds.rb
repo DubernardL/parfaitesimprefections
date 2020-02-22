@@ -3,6 +3,7 @@ puts "Destroying seed !!!"
 puts "==========================="
 Item.destroy_all
 Category.destroy_all
+Cart.destroy_all
 User.destroy_all
 puts "==========================="
 puts "Seed destroyed !!!"
@@ -39,12 +40,19 @@ item2.save!
 item3.save!
 item4.save!
 
+puts "==========================="
+puts "Creating Carts"
+puts "==========================="
+
+cart1 = Cart.new
+
+cart1.save!
 
 puts "==========================="
 puts "Creating Users"
 puts "==========================="
 
-user1 = User.new(email:"lucas@gmail.com", password:"azerty", adresse:"26 rue sanche de pomiers", ville:"Bordeaux", code_postal:"3300", prenom:"Lucas", nom:"Dubernard")
+user1 = User.new(email:"lucas@gmail.com", password:"azerty", adresse:"26 rue sanche de pomiers", ville:"Bordeaux", code_postal:"3300", prenom:"Lucas", nom:"Dubernard", cart: cart1)
 
 user1.save!
 

@@ -43,7 +43,9 @@
         <% end %>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="<%= root_path %>"><i class="fas fa-shopping-cart"></i></a>
+        <% if user_signed_in? %>
+        <a class="nav-link" href="<%= cart_path(@cart) %>"><i class="fas fa-shopping-cart"></i></a>
+        <% end %>
       </li>
     </ul>
   </div>
