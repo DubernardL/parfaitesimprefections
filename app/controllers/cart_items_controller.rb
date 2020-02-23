@@ -5,7 +5,6 @@ class CartItemsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
     @cart_item = @cart.add_item(item)
-
     if @cart_item.save
       respond_to do |format|
         format.html { redirect_to item_path(item.id), alert: "Produit ajouté !"}

@@ -13,6 +13,7 @@
           Catégories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="<%= items_path %>">Tous</a>
           <% @categories.each do |category| %>
             <a class="dropdown-item" href="<%= category_path(category) %>"><%= category.name %></a>
           <% end %>
@@ -30,6 +31,7 @@
           A propos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="<%= orders_path %>">Mes commandes</a>
           <a class="dropdown-item" href="#">L'atelier</a>
           <a class="dropdown-item" href="<%= new_contact_path %>">Contact</a>
         </div>

@@ -28,9 +28,13 @@
   </ul>
 
   <div class="center-btn">
-    <%= form_tag orders_path do %>
-      <%= hidden_field_tag 'total_cart', @total %>
-      <%= submit_tag 'Commander', class: 'btn-description mt-3' %>
+    <% if @cart.cart_items != [] %>
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'total_cart', @total %>
+        <%= submit_tag 'Commander', class: 'btn-description mt-3' %>
+      <% end %>
+    <% else %>
+      <p class="mt-3">Vous n'avez rien dans votre panier :)</p>
     <% end %>
   </div>
 </div>

@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :state
       t.monetize :amount, currency: { present: false }
       t.string :checkout_session_id
+      t.text :items, array: true, default: []
       t.references :user, foreign_key: true
 
       t.timestamps

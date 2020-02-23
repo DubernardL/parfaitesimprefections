@@ -1,13 +1,20 @@
-require 'stripe'
+require 'stripe';
 
 class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart
+  def index
+    @categories = Category.all
+    @orders = current_user.orders
+  end
+
+  def show
+    @categories = Category.all
+    @order = current_user.orders.find(params[:id])
+  end
 
   def create
     products = @cart.cart_items
-
-    order  = Order.create!(amount: params[:total_cart].to_i, state: 'pending', user: current_user)
 
     @line_items = []
 
@@ -22,6 +29,8 @@ class OrdersController < ApplicationController
       @line_items << item
     end
 
+    order  = Order.create!(amount: params[:total_cart].to_i, state: 'pending', user: current_user, items: @line_items )
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: @line_items,
@@ -31,11 +40,5 @@ class OrdersController < ApplicationController
 
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
-  end
-
-  def show
-    @categories = Category.all
-    @order = current_user.orders.find(params[:id])
-    @items = @cart.cart_items
   end
 end
