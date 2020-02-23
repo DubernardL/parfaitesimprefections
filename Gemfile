@@ -41,6 +41,8 @@ gem 'money-rails'
 
 gem 'stripe'
 
+gem 'stripe_event'
+
 gem 'devise'
 
 # Use ActiveStorage variant

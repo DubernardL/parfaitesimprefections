@@ -1,9 +1,8 @@
-<%= render 'shared/navbar' %>
 <div class="container">
   <a href="javascript:history.go(-1)"><i class="fas fa-arrow-left"></i></a>
-
+  <h2 class="mt-3 mb-3">Résumé de la commande</h2>
   <ul class="list-group mt-3">
-    <% @cart.cart_items.each do |itemcart| %>
+    <% @items.each do |itemcart| %>
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <%= link_to item_path(itemcart.item.id), class:"link-to" do %>
           <img src="<%= itemcart.item.image %>" class="img-cart"> <%= itemcart.item.name %>
@@ -14,11 +13,6 @@
           <span class="badge badge-primary badge-pill mr-5">
             x <%= itemcart.quantity %>
           </span>
-          <span>
-            <%= button_to cart_item_path(itemcart.id), method: :delete, class:"trash" do %>
-            <i class='fas fa-trash-alt'></i>
-            <% end %>
-          </span>
         </div>
       </li>
     <% end %>
@@ -28,10 +22,17 @@
   </ul>
 
   <div class="center-btn">
-    <%= form_tag orders_path do %>
-      <%= hidden_field_tag 'total_cart', @total %>
-      <%= submit_tag 'Commander', class: 'btn-description mt-3' %>
-    <% end %>
+    <button id="pay" class="btn-description mt-3">Payer : <%= @total %> €</button>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const paymentButton = document.getElementById('pay');
+      paymentButton.addEventListener('click', () => {
+        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+          sessionId: '<%= @order.checkout_session_id %>'
+        });
+      });
+    </script>
   </div>
+
 </div>
-<%= render 'shared/footer' %>
