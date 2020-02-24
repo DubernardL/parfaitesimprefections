@@ -1,12 +1,15 @@
 <%= render 'shared/navbar' %>
 <div class="container">
-  <a href="javascript:history.go(-1)"><i class="fas fa-arrow-left"></i></i></a>
+  <div class="d-flex align-items-center">
+    <a href="javascript:history.go(-1)"><i class="fas fa-arrow-left"></i></i></a>
+    <h2 class="ml-5">Mes commandes</h2>
+  </div>
   <% if @orders != [] %>
-    <ul class="list-group mt-3 mb-5">
+    <ul class="list-group mb-5">
       <% @orders.each do |order| %>
         <%= link_to order_path(order.id), class:"link-to" do %>
           <li class="list-group-item justify-content-between align-items-center mt-4">
-            <h3>Commande #<%= order.id %> <div class="badge badge-primary"><%= order.state %></div> </h3>
+            <h3>Commande #<%= order.id %> <div class="badge badge-warning"><%= order.state %></div> </h3>
             <% order.items.each do |item| %>
               <% new_hash = eval(item) %>
                 <ul class="list-group">
@@ -15,10 +18,12 @@
                       <img src="<%= new_hash[:images].first %>" class="img-cart mt-3 mr-5">
                       <div><%= new_hash[:name] %></div>
                     </div>
-                    <span class="badge badge-primary badge-pill mr-5">x <%= new_hash[:quantity] %></span>
+                    <span class="badge badge-warning badge-pill mr-5">x <%= new_hash[:quantity] %></span>
                   </li>
                 </ul>
               <% end %>
+            <div class="d-flex justify-content-end">Total : <%= order.amount %> €
+            </div>
             </li>
           <% end %>
       <% end %>

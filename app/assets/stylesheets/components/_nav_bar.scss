@@ -1,5 +1,8 @@
-.navbar-brand {
-  font-size: 50px !important;
+.navbar {
+  width: 100% !important;
+}
+
+h1 {
   font-family: 'Nothing You Could Do', cursive;
 }
 
@@ -11,6 +14,7 @@
   flex-grow: 0 !important;
 }
 
-.navbar-collapse {
-  flex-grow: 0 !important;
+.navbar-nav {
+  display: flex;
+  justify-content: space-between !important;
 }

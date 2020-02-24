@@ -3,6 +3,7 @@ class PaymentsController < ApplicationController
   before_action :set_cart
 
   def new
+    @categories = Category.all
     @order = current_user.orders.where(state: 'pending').find(params[:order_id])
     @items = @cart.cart_items
     @total = 0
