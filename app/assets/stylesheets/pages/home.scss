@@ -49,3 +49,15 @@
   transform: scale(1.03);
   color: black;
 }
+
+// flashes
+.div-flashes {
+  z-index: 1;
+  position: absolute;
+  top: 78px;
+  right: 0px;
+}
+
+.undisplay-flash {
+  display: none;
+}
