@@ -1,8 +1,7 @@
 require 'stripe';
 
 class OrdersController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
+
   def index
     @categories = Category.all
     @orders = current_user.orders

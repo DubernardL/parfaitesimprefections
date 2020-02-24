@@ -18,3 +18,11 @@ h1 {
   display: flex;
   justify-content: space-between !important;
 }
+
+.cart-badge {
+  z-index: 1;
+  position: relative;
+  top: -15px;
+  right: 15px;
+  color: white !important;
+}

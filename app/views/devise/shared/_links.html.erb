@@ -1,3 +1,4 @@
+<% @categories = Category.all %>
 <%- if controller_name != 'sessions' %>
   <%= link_to "Connexion", new_session_path(resource_name) %><br />
 <% end %>

@@ -10,6 +10,8 @@ module CurrentCart
         @cart = Cart.create
         current_user.cart = @cart
       end
+      @count_cart = 0
+      @cart.cart_items.each { |item| @count_cart += item.quantity }
     end
   end
 end

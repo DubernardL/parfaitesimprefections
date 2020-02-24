@@ -1,6 +1,4 @@
 class PaymentsController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
 
   def new
     @categories = Category.all

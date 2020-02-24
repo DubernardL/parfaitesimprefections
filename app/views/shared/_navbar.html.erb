@@ -35,6 +35,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<%= orders_path %>">Mes commandes</a>
+          <% if user_signed_in? %>
+            <a class="dropdown-item" href="<%= edit_user_registration_path %>">Mon profil</a>
+          <% end %>
           <a class="dropdown-item" href="#">L'atelier</a>
           <a class="dropdown-item" href="<%= new_contact_path %>">Contact</a>
         </div>
@@ -48,7 +51,10 @@
       </li>
       <li class="nav-item active">
         <% if user_signed_in? %>
-        <a class="nav-link" href="<%= cart_path(@cart) %>"><i class="fas fa-shopping-cart"></i></a>
+          <a class="nav-link" href="<%= cart_path(@cart) %>">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge badge-pill badge-warning cart-badge"><%= @count_cart %></span>
+          </a>
         <% end %>
       </li>
     </ul>
