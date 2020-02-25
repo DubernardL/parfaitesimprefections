@@ -1,32 +1,23 @@
 // description
 .description {
   justify-content: space-between;
-  align-items: flex-end;
 }
 
-.content-description {
+.img-home {
   margin-top: 50px;
-}
-
-.img-emaille-content {
-  width: 500px;
-}
-
-.img-emaille {
   text-align: center;
 }
 
-.img-atelier {
-  text-align: center;
+.img-home h2 {
+  margin-top: 15px;
+}
+
+.img-home img {
+  height: 500px;
 }
 
 .center-btn {
   text-align: center;
-}
-
-.content-description h2 {
-  text-align: center;
-  margin-top: 10px;
 }
 
 // Category

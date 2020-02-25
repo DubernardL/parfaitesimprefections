@@ -1,13 +1,29 @@
 <div class="container">
-  <h1 class="mb-5">Atelier</h1>
+  <h1 class="mb-5">L'Atelier</h1>
 
-  <div class="image">
-     <h1 class="heading">Main Heading</h1>
+  <div class="section">
+    <div class="image" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path('artisan.jpg') %>);">
+    </div>
+    <div class="about">
+       <h2>Main Description</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure cum placeat nemo obcaecati doloribus reiciendis sequi illum, eligendi maiores sapiente repudiandae in quod expedita, ut dolor deserunt, dolorem officiis blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor perferendis modi deleniti molestias ea, nostrum accusamus similique laudantium odit cupiditate. Officia placeat temporibus a modi ea adipisci. Facere vitae, illum?</p>
+    </div>
   </div>
-  <div class="about">
-     <h2>Main Description</h2>
-     <p>Roll on the floor purring your whiskers off intrigued by the shower burrow under covers, and play time, rub face on everything, intently sniff hand, or pelt around the house and up and down stairs chasing phantoms. Attack feet. Damn that dog shake treat bag under the bed drink water out of the faucet for lick butt love to play with owner's hair tie. Swat at dog give attitude.</p>
+
+  <div class="section">
+    <div class="image" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path('bracelet.jpg') %>);">
+    </div>
+    <div class="about">
+       <h2>Main Description</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure cum placeat nemo obcaecati doloribus reiciendis sequi illum, eligendi maiores sapiente repudiandae in quod expedita, ut dolor deserunt, dolorem officiis blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor perferendis modi deleniti molestias ea, nostrum accusamus similique laudantium odit cupiditate. Officia placeat temporibus a modi ea adipisci. Facere vitae, illum?</p>
+    </div>
   </div>
+
+  <div class="contact-order">
+      <p>Vous désirez communiquer avec moi ?</p>
+      <a href="<%= new_contact_path %>"><button type="button" class="btn-description">Contact</button></a>
+
+    </div>
 </div>
 
 

@@ -4,6 +4,7 @@ puts "==========================="
 Item.destroy_all
 Category.destroy_all
 Cart.destroy_all
+Order.destroy_all
 User.destroy_all
 puts "==========================="
 puts "Seed destroyed !!!"
@@ -31,9 +32,9 @@ item1 = Item.new(name:"Boucle d'oreille", category: cate1, price: 12, descriptio
 
 item2 = Item.new(name:"Bracelet", category: cate1, price: 50, description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, inventore. Adipisci maxime sit voluptates quibusdam assumenda perferendis impedit distinctio similique et necessitatibus quas veritatis ducimus aperiam, sunt consequuntur repudiandae quos.", image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Bracelet_de_survie_-_Blaze_Bar.png", photo2:"https://www.oh-myshop.com/wp-content/uploads/2017/07/BC1663Fbis-b.jpg", photo3:"https://www.bijourama.com/media/produits/pandora-bijoux/img/bracelet-pandora-moments-de-vie-590719-bracelet-coeur-argent-femme590719_1200x1200.jpg")
 
-item3 = Item.new(name:"Poignée de commode", category: cate2, price: 26, description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, inventore. Adipisci maxime sit voluptates quibusdam assumenda perferendis impedit distinctio similique et necessitatibus quas veritatis ducimus aperiam, sunt consequuntur repudiandae quos.", image: "https://www.publicdomainpictures.net/pictures/300000/nahled/door-handle-in-brass.jpg")
+item3 = Item.new(name:"Poignée de commode", category: cate2, price: 26, description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, inventore. Adipisci maxime sit voluptates quibusdam assumenda perferendis impedit distinctio similique et necessitatibus quas veritatis ducimus aperiam, sunt consequuntur repudiandae quos.", image: "https://www.publicdomainpictures.net/pictures/300000/nahled/door-handle-in-brass.jpg", photo2:"https://cdn.pixabay.com/photo/2017/03/13/12/17/door-2139535_960_720.jpg", photo3:"https://cdn.pixabay.com/photo/2014/06/18/16/29/doorknob-371406_960_720.jpg")
 
-item4 = Item.new(name:"Lampe bois flottant", category: cate3, price: 26, description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, inventore. Adipisci maxime sit voluptates quibusdam assumenda perferendis impedit distinctio similique et necessitatibus quas veritatis ducimus aperiam, sunt consequuntur repudiandae quos.", image: "https://www.cdiscount.com/pdt2/1/1/7/1/300x300/auc6288324752117/rw/suspension-design-triangle-en-bois-42cm-110-220v.jpg", photo2:"https://www.boudoirdumonde.com/boutique/images_produits/lampe-bois-naturel-kai-z.jpg", photo3:"https://mobiliernitro.com/33379-big_default/lampe-design-bois-flotte-rayan.jpg")
+item4 = Item.new(name:"Lampe bois flottant", category: cate3, price: 26, description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, inventore. Adipisci maxime sit voluptates quibusdam assumenda perferendis impedit distinctio similique et necessitatibus quas veritatis ducimus aperiam, sunt consequuntur repudiandae quos.", image: "https://www.boudoirdumonde.com/boutique/images_produits/lampe-bois-naturel-kai-z.jpg", photo2:"https://www.cdiscount.com/pdt2/1/1/7/1/300x300/auc6288324752117/rw/suspension-design-triangle-en-bois-42cm-110-220v.jpg", photo3:"https://mobiliernitro.com/33379-big_default/lampe-design-bois-flotte-rayan.jpg")
 
 item1.save!
 item2.save!
