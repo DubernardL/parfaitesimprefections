@@ -3,12 +3,10 @@ require 'stripe';
 class OrdersController < ApplicationController
 
   def index
-    @categories = Category.all
     @orders = current_user.orders
   end
 
   def show
-    @categories = Category.all
     @order = current_user.orders.find(params[:id])
   end
 
