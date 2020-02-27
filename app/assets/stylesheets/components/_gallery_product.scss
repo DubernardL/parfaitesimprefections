@@ -77,11 +77,11 @@ img {
 }
 
 .gallery__hero {
-    overflow: hidden;
-    position: relative;
+  overflow: hidden;
+  position: relative;
   padding: $base-spacing*2;
   margin: 0 0 $base-spacing/3;
-    background: #fff;
+  // background: #fff;
 
     // Modifiers
     .is-zoomed & {
@@ -120,7 +120,7 @@ img {
 
 .gallery__thumbs {
   text-align: center;
-  background: #fff;
+  // background: #fff;
     a {
     display: inline-block;
         width: 20%;
